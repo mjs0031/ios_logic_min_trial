@@ -5,6 +5,17 @@
 //  Created by Matthew Swann on 6/24/14.
 //  Copyright (c) 2014 ___FULLUSERNAME___. All rights reserved.
 //
+//
+//
+//
+//  Major steps needed ::
+//      1) normalization function
+//      2) tab view exploration
+//      3) minimizer
+//      4) how to pass variables to other views
+//      5) vizualization
+
+//    Keep below 100 MB
 
 #import "ios_login_minViewController.h"
 
@@ -31,8 +42,10 @@
  
  */
 - (IBAction)background_tap:(id)sender {
+    
     [self.char_entry_field resignFirstResponder];
 }
+
 
 /**
  
