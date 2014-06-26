@@ -44,13 +44,30 @@
 
 - (IBAction)char_entry_button_pressed:(UIButton *)sender {
     
+    
+    // needs -->
+    
+    // 1) resign keyboard if active
+    // 2) validate char/binary
+    // 3) if char, nomalize (may need global function variable)
+    // 4) minimize
+    [self.char_entry_field resignFirstResponder];
+    
     NSString *function = self.char_entry_field.text;
     
+    
+    // make global
     NSString *message = @"";
     
     NSString *temp = @"";
     
+    
+    // not needed, the length can be checked to equal zero
     NSString * const control = @"";
+    
+    if ( ![control length] == 0 ) {
+        message = @"bad";
+    }
     
     temp = [self initial_char_check:function];
     
@@ -58,24 +75,24 @@
         message = temp;
     }// 1
     
-    if ( [self this_is_binary:function] == true ) { // 2
+    //if ( [self this_is_binary:function] == true ) { // 2
     
-        temp = [self validate_input_binary: function];
+        //temp = [self validate_input_binary: function];
         
-        if (message == control) { // 3
-            message = temp;
-        } // 3
+        //if (message == control) { // 3
+        //    message = temp;
+        //} // 3
         
-    } // 2
+   // } // 2
     
-    else { // 4
+    //else { // 4
     
         temp = [self validate_input_char: function];
     
         if (message == control) { // 5
             message = temp;
         } //5
-    } // 4
+    //} // 4
     
     if ( message != control ) {
     
@@ -176,7 +193,7 @@
     
     NSString *message = @"";
     
-    NSCharacterSet *inverted_chars = [[NSCharacterSet characterSetWithCharactersInString:@"aAbBcCdD+'"] invertedSet];
+    NSCharacterSet *inverted_chars = [[NSCharacterSet characterSetWithCharactersInString:@"aAbBcCdD+' "] invertedSet];
     
     NSRange tripped = [function rangeOfCharacterFromSet:inverted_chars];
     

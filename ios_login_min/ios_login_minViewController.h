@@ -26,7 +26,7 @@
 
 - (void) input_validation_error: message;
 
-- (NSString *) is_binary_type_function:function;
+//- (NSString *) is_binary_type_function:function;
 
 - (NSString *) initial_char_check: function;
 
